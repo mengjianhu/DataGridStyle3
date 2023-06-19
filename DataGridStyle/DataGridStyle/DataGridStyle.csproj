@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Convert\**" />
+    <Compile Remove="新文件夹\**" />
+    <EmbeddedResource Remove="Convert\**" />
+    <EmbeddedResource Remove="新文件夹\**" />
+    <None Remove="Convert\**" />
+    <None Remove="新文件夹\**" />
+    <Page Remove="Convert\**" />
+    <Page Remove="新文件夹\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Assert\Fonts\D-DIN-Bold.otf" />
+    <None Remove="Assert\Fonts\D-DIN.otf" />
+    <None Remove="Assert\Fonts\icomoon.ttf" />
+    <None Remove="Assert\Fonts\iconfont.ttf" />
+    <None Remove="Assert\Fonts\SourceHanSansCN-Bold.otf" />
+    <None Remove="Assert\Fonts\SourceHanSansCN-Medium.otf" />
+    <None Remove="Assert\Fonts\SourceHanSansCN-Regular.otf" />
+    <None Remove="Assert\Fonts\优设标题黑.TTF" />
+    <None Remove="Images\empty_zanwukaosheng.png" />
+    <None Remove="Images\icon_chukao.png" />
+    <None Remove="Images\icon_kaoshizhohng.png" />
+    <None Remove="Images\icon_lixian.png" />
+    <None Remove="Images\icon_zaixian.png" />
+    <None Remove="Images\p1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.11.0" />
+    <PackageReference Include="Prism.DryIoc" Version="8.1.97" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataGridStyle.Core\DataGridStyle.Core.csproj" />
+    <ProjectReference Include="..\Modules\DataGridStyle.Modules.ModuleName\DataGridStyle.Modules.ModuleName.csproj" />
+    <ProjectReference Include="..\Services\DataGridStyle.Services.Interfaces\DataGridStyle.Services.Interfaces.csproj" />
+    <ProjectReference Include="..\Services\DataGridStyle.Services\DataGridStyle.Services.csproj" />
+    <ProjectReference Include="..\Tests\DataGridStyle.Modules.ModuleName.Tests\DataGridStyle.Modules.ModuleName.Tests.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Fonts\D-DIN-Bold.otf" />
+    <Resource Include="Assert\Fonts\D-DIN.otf" />
+    <Resource Include="Assert\Fonts\icomoon.ttf" />
+    <Resource Include="Assert\Fonts\iconfont.ttf" />
+    <Resource Include="Assert\Fonts\SourceHanSansCN-Bold.otf" />
+    <Resource Include="Assert\Fonts\SourceHanSansCN-Medium.otf" />
+    <Resource Include="Assert\Fonts\SourceHanSansCN-Regular.otf" />
+    <Resource Include="Assert\Fonts\优设标题黑.TTF" />
+    <Resource Include="Images\empty_zanwukaosheng.png" />
+    <Resource Include="Images\icon_chukao.png" />
+    <Resource Include="Images\icon_kaoshizhohng.png" />
+    <Resource Include="Images\icon_lixian.png" />
+    <Resource Include="Images\icon_zaixian.png" />
+    <Resource Include="Images\p1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GL.Common.Controls">
+      <HintPath>..\..\GL.Common.Controls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

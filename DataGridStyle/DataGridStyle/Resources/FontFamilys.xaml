@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <FontFamily x:Key="BasicFontFamily">
+        pack://application:,,,/DataGridStyle;component/Assert/Fonts/#思源黑体 CN Regular
+    </FontFamily>
+    <FontFamily x:Key="MediumFontFamily">
+        pack://application:,,,/DataGridStyle;component/Assert/Fonts/#思源黑体 CN Medium
+    </FontFamily>
+    <FontFamily x:Key="BoldFontFamily">
+        pack://application:,,,/DataGridStyle;component/Assert/Fonts/#思源黑体 CN Bold
+    </FontFamily>
+    <FontFamily x:Key="D-DINBoldFontFamily">
+        pack://application:,,,/DataGridStyle;component/Assert/Fonts/#D-DIN-Bold.otf
+    </FontFamily>
+    <FontFamily x:Key="D-DINFontFamily">
+        pack://application:,,,/DataGridStyle;component/Assert/Fonts/#D-DIN.otf
+    </FontFamily>
+    <FontFamily x:Key="Title-FontFamily">
+        pack://application:,,,/DataGridStyle;component/Assert/Fonts/#优设标题黑
+    </FontFamily>
+</ResourceDictionary>

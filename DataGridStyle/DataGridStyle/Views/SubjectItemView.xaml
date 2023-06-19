@@ -1,0 +1,161 @@
+﻿<Window x:Class="DataGridStyle.Views.SubjectItemView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataGridStyle.Views"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        Title="SubjectItemView">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/GL.Common.Controls;component/Resources/FontFamilies.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <Style TargetType="{x:Type Button}"
+                   x:Key="PrimaryButton">
+                <Setter Property="FontFamily"
+                        Value="{StaticResource BasicFontFamily}" />
+                <Setter Property="VerticalContentAlignment"
+                        Value="Center" />
+                <Setter Property="HorizontalContentAlignment"
+                        Value="Center" />
+                <Setter Property="FontSize"
+                        Value="16" />
+                <Setter Property="Foreground"
+                        Value="#59607B" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border x:Name="Background"
+                                    CornerRadius="7"
+                                    Width="{TemplateBinding Width}"
+                                    Padding="{TemplateBinding Padding}"
+                                    Height="{TemplateBinding Height}"
+                                    Cursor="Hand"
+                                    VerticalAlignment="{TemplateBinding VerticalAlignment}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalAlignment}"
+                                    Background="{TemplateBinding Background}">
+
+                                <ContentControl Content="{TemplateBinding Content}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+                                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                FontSize="{TemplateBinding FontSize}"
+                                                FontFamily="{TemplateBinding FontFamily}"
+                                                Foreground="{TemplateBinding Foreground}" />
+                                <Border.Effect>
+                                    <DropShadowEffect Direction="290"
+                                                      BlurRadius="30"
+                                                      ShadowDepth="5"
+                                                      Color="#ffffff"
+                                                      Opacity="0.3">
+                                    </DropShadowEffect>
+                                </Border.Effect>
+                            </Border>
+
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <Style TargetType="Path"
+                   x:Key="Dash">
+                <Setter Property="Height"
+                        Value="2" />
+                <Setter Property="Stretch"
+                        Value="Fill" />
+                <Setter Property="Stroke"
+                        Value="#FFFFFF" />
+                <Setter Property="Width"
+                        Value="254" />
+                <Setter Property="StrokeDashArray"
+                        Value="2,2" />
+
+                <Setter Property="Data">
+                    <Setter.Value>
+                        <LineGeometry StartPoint="0,0"
+                                      EndPoint="1,0"></LineGeometry>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Border CornerRadius="8"
+            Background="#ffffff"
+            Height="295"
+            Width="568">
+
+        <ItemsControl ItemsSource="{Binding students}"
+                      VerticalAlignment="Center"
+                      AlternationCount="4">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid   Background="White"
+                            Width="568"
+                            Height="72">
+                        <StackPanel Orientation="Horizontal"
+                                    Height="72">
+                            <Grid>
+                                <StackPanel Orientation="Horizontal"
+                                            VerticalAlignment="Center">
+                                    <TextBlock Text="【"
+                                               FontSize="20"
+                                               Foreground="#1E2230"
+                                               FontFamily="{StaticResource BoldFontFamily}" />
+                                    <TextBlock Text="K11"
+                                               FontSize="20"
+                                               Foreground="#1E2230"
+                                               FontFamily="{StaticResource BoldFontFamily}" />
+                                    <TextBlock Text="】"
+                                               FontSize="20"
+                                               Foreground="#1E2230"
+                                               FontFamily="{StaticResource BoldFontFamily}" />
+                                </StackPanel>
+                            </Grid>
+                            <TextBlock Text="电工仪器仪表安全使用"
+                                       VerticalAlignment="Center"
+                                       FontSize="20"
+                                       Foreground="#1E2230"
+                                       FontFamily="{StaticResource BasicFontFamily}" />
+                            <Image Source="/Images/icon_chukao.png"
+                                   Width="24"
+                                   Height="24"
+                                   VerticalAlignment="Center"
+                                   Margin="12,0,0,0" />
+
+                        </StackPanel>
+                        <Button Style="{StaticResource PrimaryButton}"
+                                Content="变更"
+                                Foreground="#5E80FB"
+                                HorizontalAlignment="Right"
+                                Background="#E6EEFF"
+                                Width="76"
+                                FontFamily="{StaticResource BasicFontFamily}"
+                                Height="36"
+                                Margin="0,0,17,0" />
+                        <Separator Height="1"
+                                   VerticalAlignment="Bottom"
+                                   Background="#E6E7F0"
+                                   Margin="12,0,12,0.1"
+                                   x:Name="sp" />
+                    </Grid>
+                    <DataTemplate.Triggers>
+                        <Trigger Property="ItemsControl.AlternationIndex"
+                                 Value="3">
+
+                            <Setter   TargetName="sp"
+                                      Property="Visibility"
+                                      Value="Collapsed" />
+                        </Trigger>
+
+
+
+
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </Border>
+</Window>
