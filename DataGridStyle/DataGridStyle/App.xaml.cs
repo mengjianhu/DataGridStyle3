@@ -16,7 +16,7 @@ namespace DataGridStyle
     {
         protected override Window CreateShell()
         {
-            return Container.Resolve<SubjectItemView>();
+            return Container.Resolve<TestView>();
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

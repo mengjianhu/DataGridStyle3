@@ -16,7 +16,7 @@ namespace DataGridStyle.ViewModels
     {
         public DelegateCommand<DeviceInfo> CheaterCommand { get; set; }
 
-         
+
         private ObservableCollection<DeviceInfo> _students;
 
         public ObservableCollection<DeviceInfo> students
@@ -175,7 +175,46 @@ namespace DataGridStyle.ViewModels
             {
                 MessageBoxTip.ShowError(a.DeviceNumber.ToString());
             });
-           
+            Task.Run( async () =>
+            {
+                while (true)
+                {
+                 await   Application.Current.Dispatcher.Invoke(async() =>
+                    {
+                        students.Add(new DeviceInfo()
+                        {
+                            DeviceNumber = 7,
+                            DeviceName = "高压（高压柜1、变压器）",
+                            Type = DeviceType.考试中,
+                            ExamInfo = new ExamInfo()
+                            {
+                                Name = "周傲笑",
+                                IdCard = "3302119******5324"
+                            },
+                            Code = "K24",
+                            CodeName = "10kv高压柜（送）电操作"
+                        });
+                        students = new ObservableCollection<DeviceInfo>(students.OrderBy(e =>
+                        {
+                            switch (e.Type)
+                            {
+                                case DeviceType.考试中:
+                                    return 0;
+                                case DeviceType.在线:
+                                    return 1;
+                                case DeviceType.离线:
+                                    return 2;
+                                default:
+                                    return 2;
+                            }
+                        }));
+                    });
+                  await  Task.Delay(5000);   
+                  
+                }
+
+            });
+
         }
 
     }
